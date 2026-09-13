@@ -66,35 +66,369 @@ function App() {
 
 function Home({ setPage }) {
   return (
-    <>
-      <p className="text-emerald-400 font-semibold">
-        AI-POWERED ENERGY AUDITING
-      </p>
+    <div className="min-h-screen w-full overflow-hidden">
 
-      <h1 className="text-4xl md:text-6xl font-bold mt-4 max-w-4xl">
-        Find Hidden Energy Waste
-        <span className="text-emerald-400"> Before It Costs You.</span>
-      </h1>
+      {/* HERO SECTION */}
+      <section className="relative px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-16">
 
-      <p className="text-slate-400 text-lg mt-6 max-w-2xl">
-        Upload an appliance photo and let AI identify energy waste,
-        estimate financial impact, calculate carbon impact, and
-        recommend practical eco-friendly actions.
-      </p>
+        {/* Background glow */}
+        <div className="absolute top-10 left-1/4 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-green-400/5 rounded-full blur-3xl pointer-events-none"></div>
 
-      <button
-        onClick={() => setPage("EcoSort AI")}
-        className="mt-8 bg-emerald-500 text-slate-950 font-bold px-7 py-4 rounded-xl"
-      >
-        🔍 Start AI Energy Audit
-      </button>
+        <div className="relative max-w-7xl mx-auto">
 
-      <div className="grid md:grid-cols-3 gap-5 mt-16">
-        <Card value="₹0" title="Potential Savings" />
-        <Card value="0 kg" title="Estimated CO₂ Reduction" />
-        <Card value="0" title="Appliances Audited" />
-      </div>
-    </>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-sm font-medium">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+            AI-Powered Environmental Intelligence
+          </div>
+
+          {/* Main heading */}
+          <div className="mt-7 max-w-5xl">
+
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+              Make smarter choices
+              <br />
+
+              <span className="text-emerald-400">
+                for a greener future.
+              </span>
+            </h1>
+
+            <p className="mt-6 text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
+              EcoAI combines artificial intelligence with environmental
+              intelligence to help you understand energy consumption,
+              segregate waste, and make better everyday decisions.
+            </p>
+
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+
+            <button
+              onClick={() => setPage("EcoSort AI")}
+              className="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-all duration-200 shadow-lg shadow-emerald-500/20"
+            >
+              ♻️ Try EcoSort AI
+            </button>
+
+            <button
+              onClick={() => setPage("EcoAudit AI")}
+              className="px-6 py-3.5 rounded-xl border border-slate-700 hover:border-emerald-500/50 hover:bg-slate-900 text-white font-semibold transition-all duration-200"
+            >
+              ⚡ Audit Your Energy
+            </button>
+
+          </div>
+
+          {/* Trust / deployment line */}
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <span>✓ AI-powered analysis</span>
+            <span>•</span>
+            <span>✓ Instant insights</span>
+            <span>•</span>
+            <span>✓ Working MVP</span>
+          </div>
+
+
+          {/* FEATURE CARDS */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
+
+            {/* EcoSort */}
+            <button
+              onClick={() => setPage("EcoSort AI")}
+              className="group text-left bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+            >
+
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl">
+                ♻️
+              </div>
+
+              <h3 className="text-lg font-semibold mt-5">
+                EcoSort AI
+              </h3>
+
+              <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                Identify waste using AI and discover the correct
+                disposal category and compartment.
+              </p>
+
+              <span className="inline-block mt-4 text-emerald-400 text-sm font-medium">
+                Analyze waste →
+              </span>
+
+            </button>
+
+
+            {/* EcoAudit */}
+            <button
+              onClick={() => setPage("EcoAudit AI")}
+              className="group text-left bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+            >
+
+              <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-2xl">
+                ⚡
+              </div>
+
+              <h3 className="text-lg font-semibold mt-5">
+                EcoAudit AI
+              </h3>
+
+              <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                Analyze appliances and estimate energy usage,
+                cost, CO₂ impact, and efficiency.
+              </p>
+
+              <span className="inline-block mt-4 text-emerald-400 text-sm font-medium">
+                Audit appliance →
+              </span>
+
+            </button>
+
+
+            {/* Dashboard */}
+            <button
+              onClick={() => setPage("Dashboard")}
+              className="group text-left bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+            >
+
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl">
+                📊
+              </div>
+
+              <h3 className="text-lg font-semibold mt-5">
+                Eco Dashboard
+              </h3>
+
+              <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                Track waste scans, energy audits, environmental
+                impact, and your Eco Score.
+              </p>
+
+              <span className="inline-block mt-4 text-emerald-400 text-sm font-medium">
+                View impact →
+              </span>
+
+            </button>
+
+
+            {/* Smart Map */}
+            <button
+              onClick={() => setPage("Map")}
+              className="group text-left bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+            >
+
+              <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-2xl">
+                🗺️
+              </div>
+
+              <h3 className="text-lg font-semibold mt-5">
+                Smart Disposal Map
+              </h3>
+
+              <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                Find recommended disposal locations based on
+                your detected waste category.
+              </p>
+
+              <span className="inline-block mt-4 text-emerald-400 text-sm font-medium">
+                Explore map →
+              </span>
+
+            </button>
+
+          </div>
+
+
+          {/* HOW IT WORKS */}
+          <div className="mt-20">
+
+            <div className="text-center max-w-2xl mx-auto">
+
+              <p className="text-emerald-400 text-sm font-semibold uppercase tracking-widest">
+                How EcoAI works
+              </p>
+
+              <h2 className="text-3xl md:text-4xl font-bold mt-3">
+                From image to environmental action
+              </h2>
+
+              <p className="text-slate-400 mt-4">
+                AI transforms everyday environmental problems into
+                simple, actionable insights.
+              </p>
+
+            </div>
+
+
+            <div className="grid md:grid-cols-3 gap-6 mt-10">
+
+              {/* Step 1 */}
+              <div className="relative bg-slate-900/50 border border-slate-800 rounded-2xl p-7">
+
+                <div className="text-emerald-400 text-sm font-bold">
+                  01
+                </div>
+
+                <div className="text-3xl mt-4">
+                  📸
+                </div>
+
+                <h3 className="text-xl font-semibold mt-4">
+                  Capture
+                </h3>
+
+                <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                  Upload a waste item or appliance image and
+                  provide the required information.
+                </p>
+
+              </div>
+
+
+              {/* Step 2 */}
+              <div className="relative bg-slate-900/50 border border-slate-800 rounded-2xl p-7">
+
+                <div className="text-emerald-400 text-sm font-bold">
+                  02
+                </div>
+
+                <div className="text-3xl mt-4">
+                  🤖
+                </div>
+
+                <h3 className="text-xl font-semibold mt-4">
+                  Analyze with AI
+                </h3>
+
+                <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                  Gemini analyzes the image and generates
+                  environmental insights in seconds.
+                </p>
+
+              </div>
+
+
+              {/* Step 3 */}
+              <div className="relative bg-slate-900/50 border border-slate-800 rounded-2xl p-7">
+
+                <div className="text-emerald-400 text-sm font-bold">
+                  03
+                </div>
+
+                <div className="text-3xl mt-4">
+                  🌱
+                </div>
+
+                <h3 className="text-xl font-semibold mt-4">
+                  Take Action
+                </h3>
+
+                <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                  Get recommendations, track your impact,
+                  and make smarter environmental decisions.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* IMPACT SECTION */}
+          <div className="mt-20 bg-gradient-to-br from-emerald-500/10 to-slate-900 border border-emerald-500/20 rounded-3xl p-8 md:p-12">
+
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+
+              <div>
+
+                <p className="text-emerald-400 text-sm font-semibold uppercase tracking-widest">
+                  One platform. Two problems.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold mt-3">
+                  Turning awareness into action.
+                </h2>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+                  EcoAI brings energy efficiency and waste segregation
+                  together in one intelligent platform — helping users
+                  understand their environmental impact and act on it.
+                </p>
+
+              </div>
+
+
+              <div className="grid grid-cols-2 gap-4">
+
+                <div className="bg-slate-950/70 rounded-2xl p-5 border border-slate-800">
+                  <div className="text-2xl">♻️</div>
+                  <p className="font-semibold mt-3">
+                    Smarter Sorting
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Better waste segregation
+                  </p>
+                </div>
+
+                <div className="bg-slate-950/70 rounded-2xl p-5 border border-slate-800">
+                  <div className="text-2xl">⚡</div>
+                  <p className="font-semibold mt-3">
+                    Energy Awareness
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Understand consumption
+                  </p>
+                </div>
+
+                <div className="bg-slate-950/70 rounded-2xl p-5 border border-slate-800">
+                  <div className="text-2xl">🌍</div>
+                  <p className="font-semibold mt-3">
+                    Environmental Impact
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Track meaningful metrics
+                  </p>
+                </div>
+
+                <div className="bg-slate-950/70 rounded-2xl p-5 border border-slate-800">
+                  <div className="text-2xl">🤖</div>
+                  <p className="font-semibold mt-3">
+                    AI Intelligence
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Instant visual analysis
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* FOOTER MESSAGE */}
+          <div className="text-center mt-16 pb-8">
+
+            <p className="text-slate-500 text-sm">
+              🌱 EcoAI — Technology for a cleaner, smarter future.
+            </p>
+
+            <p className="text-slate-600 text-xs mt-2">
+              AI-generated environmental insights are estimates and
+              should be used as decision-support information.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
   );
 }
       function Audit() {
