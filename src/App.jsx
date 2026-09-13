@@ -127,7 +127,7 @@ function Home({ setPage }) {
       formData.append("image", selectedFile);
 
       const response = await fetch(
-        "http://localhost:5000/api/waste/analyze",
+        "https://ecoai-backend-ankit.onrender.com/api/waste/analyze",
         {
           method: "POST",
           body: formData,
@@ -1096,7 +1096,7 @@ function EcoAudit() {
       formData.append("tariff", tariff);
 
       const response = await fetch(
-        "http://localhost:5000/api/energy/analyze",
+        "https://ecoai-backend-ankit.onrender.com/api/energy/analyze",
         {
           method: "POST",
           body: formData,
